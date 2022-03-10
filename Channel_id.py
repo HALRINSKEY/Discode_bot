@@ -14,4 +14,5 @@ async def on_ready():
         print("----------")
  
 # Botのトークンを指定（デベロッパーサイトで確認可能）
-client.run('OTQ5MDg0MTE0NTM4MDkwNTM4.YiFNdg.IJJYOxNjyMw4H3FeHmcp9tvGNWk')
+t = input()
+client.run(t)
