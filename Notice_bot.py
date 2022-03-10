@@ -28,4 +28,4 @@ async def on_voice_state_update(member, before, after):
                 await botRoom.send(file=discord.File(shota[0]))
  
 # Botのトークンを指定
-client.run('OTQ5MDg0MTE0NTM4MDkwNTM4.YiFNdg.IJJYOxNjyMw4H3FeHmcp9tvGNWk')
+client.run('')
