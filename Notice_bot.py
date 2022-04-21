@@ -1,8 +1,7 @@
 # DiscordBot.py
  
-from email.mime import image
+
 import discord
-import glob
  
 client = discord.Client()
  
@@ -22,11 +21,6 @@ async def on_voice_state_update(member, before, after):
         if after.channel is not None and after.channel.id in announceChannelIds:
             await botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が入室しました")
 
-            if member.name == "Taki.S":
-
-                shota = glob.glob("./image/shota.png")
-                await botRoom.send(file=discord.File(shota[0]))
  
 # Botのトークンを指定
-t = input()
-client.run(t)
+client.run()
