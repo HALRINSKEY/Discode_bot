@@ -3,16 +3,17 @@
 import discord
  
 client = discord.Client()
+
+channel_name = []
+channel_id = []
  
 # 起動時処理
 @client.event
 async def on_ready():
     for channel in client.get_all_channels():
-        print("----------")
-        print("チャンネル名：" + str(channel.name))
-        print("チャンネルID：" + str(channel.id))
-        print("----------")
+        
+        channel_name = channel.name
+        channel_id = channel.id
  
-# Botのトークンを指定（デベロッパーサイトで確認可能）
-t = input()
-client.run(t)
+# Botのトークンを指定
+client.run()
