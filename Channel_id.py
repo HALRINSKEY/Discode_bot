@@ -12,8 +12,11 @@ channel_id = []
 async def on_ready():
     for channel in client.get_all_channels():
         
-        channel_name = channel.name
-        channel_id = channel.id
- 
+        channel_name.append(channel.name)
+        channel_id.append(channel.id)
+
+    print(channel_name)
+    print(channel_id)
+
 # Botのトークンを指定
 client.run()
