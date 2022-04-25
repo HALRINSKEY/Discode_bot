@@ -1,5 +1,4 @@
-# DiscordBot.py
- 
+
 
 import discord
  
