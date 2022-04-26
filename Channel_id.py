@@ -19,7 +19,7 @@ async def on_ready():
     print(channel_id)
 
 # Botのトークンを指定
-client.run("OTY2OTMwOTgzOTk3ODI5MjUw.YmI6pw.yLsLeNutdGfR3NaNp_Hy8VFGdqQ")
+client.run()
 
 #966831929058025483 voice 1
 #966831929058025482 text 1
