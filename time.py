@@ -33,15 +33,14 @@ async def on_voice_state_update(member, before, after):
             #退室して5秒以内に入室した際は通知しない
             if leave_name == member.name:
                 t = time.time() - s
-                print(t)
 
                 if t < 5:
                     pass
                 else:
-                    await botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が入室しました_2")
+                    await botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が入室しました")
        
             else:
-                await botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が入室しました_3")
+                await botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が入室しました")
                 
 
 
@@ -58,4 +57,4 @@ async def on_voice_state_update(member, before, after):
 
  
 # Botのトークンを指定
-client.run("OTY2OTMwOTgzOTk3ODI5MjUw.YmI6pw.yLsLeNutdGfR3NaNp_Hy8VFGdqQ")
+client.run()
