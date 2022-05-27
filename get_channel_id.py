@@ -3,10 +3,8 @@ import get_token
 
 class Channel:
 
-    channels = {}
-
     def __init__(self):
-        pass
+        self.channels = {}
 
     def receive_channels(self, name, id):
         self.channels[name] = str(id)
@@ -28,6 +26,7 @@ async def on_ready():
     for channel in client.get_all_channels():
         
         ch.receive_channels(channel.name,channel.id)
+    ch.print_channels()
 
 
 client.run(get_token.get_token())
