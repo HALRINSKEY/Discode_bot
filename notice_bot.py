@@ -2,10 +2,8 @@ from tracemalloc import start
 import discord
 import time
 import get_token
-import get_channel_id
  
 client = discord.Client()
-c = get_channel_id.Channel()
 
 leave_name = 0
 s = 0
