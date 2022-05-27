@@ -1,13 +1,14 @@
 
  
 import discord
+import get_token
  
 client = discord.Client()
 
 channel_name = []
 channel_id = []
- 
-# 起動時処理
+
+# チャンネルID、チャンネル名取得
 @client.event
 async def on_ready():
     for channel in client.get_all_channels():
@@ -15,11 +16,16 @@ async def on_ready():
         channel_name.append(channel.name)
         channel_id.append(channel.id)
 
-    print(channel_name)
-    print(channel_id)
+        print(channel.name,channel.id)
+        
+class Channel:
 
-# Botのトークンを指定
-client.run()
+    def __init__(self):
+        pass
 
-#966831929058025483 voice 1
-#966831929058025482 text 1
+    def 
+
+client.run(get_token.get_token())
+
+# 966831929058025482 text 1
+# 966831929058025483 voice 1
