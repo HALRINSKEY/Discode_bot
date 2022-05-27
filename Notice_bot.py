@@ -2,9 +2,10 @@ from tracemalloc import start
 import discord
 import time
 import get_token
-import channel_id
+import get_channel_id
  
 client = discord.Client()
+c = get_channel_id.Channel()
 
 leave_name = 0
 s = 0
@@ -19,10 +20,10 @@ async def on_voice_state_update(member, before, after):
     # チャンネルへの入室ステータスが変更されたとき（ミュートON、OFFに反応しないように分岐）
     if before.channel != after.channel:
         # 通知メッセージを書き込むテキストチャンネル（チャンネルIDを指定）
-        botRoom = client.get_channel(966831929058025482)
+        botRoom = client.get_channel()
  
         # 入退室を監視する対象のボイスチャンネル（チャンネルIDを指定）
-        announceChannelIds = client.get_channel(966831929058025482)
+        announceChannelIds = []
  
 
         # 入室通知
