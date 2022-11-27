@@ -6,14 +6,14 @@ import get_token
 client = discord.Client()
 
 leave_name = 0
-s = 0
+leave_time = 0
  
 # チャンネル入退室時の通知処理
 @client.event
 async def on_voice_state_update(member, before, after):
 
     global leave_name
-    global s
+    global leave_time
 
     # チャンネルへの入室ステータスが変更されたとき（ミュートON、OFFに反応しないように分岐）
     if before.channel != after.channel:
@@ -29,15 +29,15 @@ async def on_voice_state_update(member, before, after):
             
             #退室して5秒以内に入室した際は通知しない
             if leave_name == member.name:
-                t = time.time() - s
+                t = time.time() - leave_time
 
                 if t < 5:
                     pass
                 else:
-                    await botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が入室しました")
+                    await botRoom.send(member.name + "entered in " + after.channel.name)
        
             else:
-                await botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が入室しました")
+                await botRoom.send(member.name + "entered in " + after.channel.name)
                 
 
 
@@ -46,7 +46,7 @@ async def on_voice_state_update(member, before, after):
         if before.channel is not None and before.channel.id in announceChannelIds:
             
             leave_name = member.name
-            s = time.time()
+            leave_time = time.time()
 
 client.run(get_token.get_token())
 
