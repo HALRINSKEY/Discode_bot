@@ -34,10 +34,10 @@ async def on_voice_state_update(member, before, after):
                 if t < 5:
                     pass
                 else:
-                    await botRoom.send(member.name + "entered in " + after.channel.name)
+                    await botRoom.send(member.name + " entered in " + after.channel.name)
        
             else:
-                await botRoom.send(member.name + "entered in " + after.channel.name)
+                await botRoom.send(member.name + " entered in " + after.channel.name)
                 
 
 
